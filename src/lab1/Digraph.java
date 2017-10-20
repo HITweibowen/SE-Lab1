@@ -17,12 +17,12 @@ public class Digraph {
     private Vector<DigraphNode> headNodeList;
     public Vector<String> nodeList;
     public Vector<String> fileText;
-    private Map<String, Boolean> visit;
     private String fileLastString;
     public Vector<String> BridgeWords;
-    public Vector<PQueue> nodeShortPath = new Vector<>();
+    private Map<String, Boolean> visit;
     public Vector<String> KeyNode = new Vector<>();
     public Vector<String> shortPath = new Vector<>();
+    public Vector<PQueue> nodeShortPath = new Vector<>();
 
     public Digraph() {
         headNodeList = new Vector<>();
@@ -141,36 +141,6 @@ public class Digraph {
         return curFlag;
     }
 
-    public String getBridgeWords(String startString, String endString) {
-        String Str;
-        BridgeWords.clear();
-        KeyNode.clear();
-        KeyNode.add(startString);
-        KeyNode.add(endString);
-        Vector<String> BridgeWords = new Vector<String>();
-        for (int i = 0; i < headNodeList.size(); i++) {
-            if (startString.equals(headNodeList.get(i).Words)) {
-                if (nodeList.contains(endString)) {
-                    gBridgeWords(endString, i);
-                    if (BridgeWords.size() >= 1)
-                        return BridgeWords.get(0);
-                    else {
-                        Str = "No bridge words from " + "\"" + startString + "\"" + " to \"" + endString + "\" !";
-                        return Str;
-                    }
-
-                }
-                Str = "No " + "\"" + endString + "\" in the graph!";
-                return Str;
-            }
-        }
-        if (nodeList.contains(endString))
-            Str = "No " + "\"" + startString + "\" in the graph!";
-        else
-            Str = "No " + "\"" + startString + "\"  and \"" + endString + "\" in the graph!";
-        return Str;
-    }
-
     public void gBridgeWords(String endString, int i) {
         for (int j = 0; j < nodeList.size(); j++)
             visit.put(nodeList.get(j), false);
@@ -202,54 +172,13 @@ public class Digraph {
         }
     }
 
-    public String getNewFiles(String text) {
-        String Result = "";
-        String[] Words = text.split(" ");
-        Result += Words[0];
-        for (int i = 0; i < Words.length - 1; i++) {
-            BridgeWords.clear();
-            getBridgeWords(Words[i], Words[i + 1]);
-            if (BridgeWords.size() != 0) {
-                Result += (" " + BridgeWords.get((int) (Math.random() * BridgeWords.size())));
-            }
-            Result += (" " + Words[i + 1]);
-        }
-        return Result;
-    }
-
-    public String twoPointsGetShortPath(String start, String end) {
-        KeyNode.clear();
-        Comparator<PQueue> Order = new Comparator<PQueue>() {
-            public int compare(PQueue S1, PQueue S2) {
-                return (S1.Costs - S2.Costs);
-            }
-        };
-
-        PriorityQueue<PQueue> D = new PriorityQueue<PQueue>(Order);
-
-        nodeShortPath.clear();
-
-        onePointGetShortPath(D, nodeShortPath, start);
-
-
-        for (int i = 0; i < nodeShortPath.size(); i++) {
-            if (nodeShortPath.get(i).End.equals(end)) {
-                shortPath = nodeShortPath.get(i).P;
-                break;
-            }
-        }
-
-        String S = "\"" + start + "\" 与 " + "\"" + end + "\" 不可达";
-        return S;
-    }
-
     public void dInit(PriorityQueue<PQueue> D, Vector<PQueue> nodeShortPath, String start) {
         for (Iterator<String> it = nodeList.iterator(); it.hasNext(); )//遍历点集合
         {
             String Str = it.next();
             PQueue Node = new PQueue();
             PQueue S = new PQueue();//记录最短路径
-            S.Path = new Vector<String>();
+            S.Path = new Vector<>();
             if (!Str.equals(start))//如果不是起始点
             {
                 Node.Costs = 1000000;//初始D数组
@@ -296,6 +225,77 @@ public class Digraph {
             }
         }
 
+    }
+
+    public String getBridgeWords(String startString, String endString) {
+        String Str;
+        BridgeWords.clear();
+        KeyNode.clear();
+        KeyNode.add(startString);
+        KeyNode.add(endString);
+        Vector<String> bridgeWords = new Vector<>();
+        for (int i = 0; i < headNodeList.size(); i++) {
+            if (startString.equals(headNodeList.get(i).Words)) {
+                if (nodeList.contains(endString)) {
+                    gBridgeWords(endString, i);
+                    if (bridgeWords.size() >= 1)
+                        return bridgeWords.get(0);
+                    else {
+                        Str = "No bridge words from " + "\"" + startString + "\"" + " to \"" + endString + "\" !";
+                        return Str;
+                    }
+
+                }
+                Str = "No " + "\"" + endString + "\" in the graph!";
+                return Str;
+            }
+        }
+        if (nodeList.contains(endString))
+            Str = "No " + "\"" + startString + "\" in the graph!";
+        else
+            Str = "No " + "\"" + startString + "\"  and \"" + endString + "\" in the graph!";
+        return Str;
+    }
+
+    public String getNewFiles(String text) {
+        String Result = "";
+        String[] Words = text.split(" ");
+        Result += Words[0];
+        for (int i = 0; i < Words.length - 1; i++) {
+            BridgeWords.clear();
+            getBridgeWords(Words[i], Words[i + 1]);
+            if (BridgeWords.size() != 0) {
+                Result += (" " + BridgeWords.get((int) (Math.random() * BridgeWords.size())));
+            }
+            Result += (" " + Words[i + 1]);
+        }
+        return Result;
+    }
+
+    public String twoPointsGetShortPath(String start, String end) {
+        KeyNode.clear();
+        Comparator<PQueue> Order = new Comparator<PQueue>() {
+            public int compare(PQueue S1, PQueue S2) {
+                return (S1.Costs - S2.Costs);
+            }
+        };
+
+        PriorityQueue<PQueue> D = new PriorityQueue<>(Order);
+
+        nodeShortPath.clear();
+
+        onePointGetShortPath(D, nodeShortPath, start);
+
+
+        for (int i = 0; i < nodeShortPath.size(); i++) {
+            if (nodeShortPath.get(i).End.equals(end)) {
+                shortPath = nodeShortPath.get(i).P;
+                break;
+            }
+        }
+
+        String s = "\"" + start + "\" 与 " + "\"" + end + "\" 不可达";
+        return s;
     }
 
     public void onePointGetShortPath(PriorityQueue<PQueue> D, Vector<PQueue> nodeShortPath, String start) {
@@ -521,7 +521,7 @@ public class Digraph {
     }
 
     public String RandomWalk(String pre) {
-        if (pre == "")//初始化
+        if (pre.equals(""))//初始化
         {
             KeyNode.clear();
             for (DigraphNode n : headNodeList) {
