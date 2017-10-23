@@ -1,6 +1,18 @@
 package lab1;
 
 import java.util.Vector;
+
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import lab1.GUI.Input;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.io.IOException;
@@ -44,7 +56,7 @@ public class Digraph
 		int Size = HeadNodeList.size();
 		for (; i < Size; i++)
 		{
-			if (CurNodeKey.equals (HeadNodeList.get(i).Words))//±éÀú±íÍ·½Úµã,µ¥´ÊÁ¬ÐøÖØ¸´µÄÇé¿ö
+			if (CurNodeKey.equals (HeadNodeList.get(i).Words))//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í·ï¿½Úµï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			{
 				DigraphNode Node = HeadNodeList.get(i);
 
@@ -67,10 +79,10 @@ public class Digraph
 				break;
 			}
 		}
-		if (i == Size)//³öÏÖÐÂµÄ±íÍ·½Úµã
+		if (i == Size)//ï¿½ï¿½ï¿½ï¿½ï¿½ÂµÄ±ï¿½Í·ï¿½Úµï¿½
 		{
 			DigraphNode HeadNode = new DigraphNode();
-			HeadNode.Next = HeadNode.Next = NewNode;//¸Ä
+			HeadNode.Next = HeadNode.Next = NewNode;//ï¿½ï¿½
 			HeadNode.Words = CurNodeKey;
 			HeadNode.AdjPointNumber ++;
 			NewNode.Next = null;
@@ -135,7 +147,7 @@ public class Digraph
 	     ||  ((char)tempchar >= 'A' && (char)tempchar <= 'Z'))
 		{
 			if ((char)tempchar >= 'A' && (char)tempchar <= 'Z')
-                tempchar += 32;//´óÐ¡Ð´×ª»»
+                tempchar += 32;//ï¿½ï¿½Ð¡Ð´×ªï¿½ï¿½
 			if (CurFlag == 1)
 				CurNodeKey.append((char)tempchar);
 			else
@@ -289,28 +301,28 @@ public class Digraph
 	    	}
 	    }
 
-	    String S = "\"" + Start + "\" Óë " + "\"" + End + "\" ²»¿É´ï";
+	    String S = "\"" + Start + "\" ï¿½ï¿½ " + "\"" + End + "\" ï¿½ï¿½ï¿½É´ï¿½";
 	    return S;
 }
 
 	public void DInit(PriorityQueue<PQueue> D, Vector<PQueue> NodeShortPath, String Start)
 	{
-		for (Iterator<String> it = NodeList.iterator(); it.hasNext();)//±éÀúµã¼¯ºÏ
+		for (Iterator<String> it = NodeList.iterator(); it.hasNext();)//ï¿½ï¿½ï¿½ï¿½ï¿½ã¼¯ï¿½ï¿½
 	    {
 			String Str = it.next();
 			PQueue Node = new PQueue();
-			PQueue S = new PQueue();//¼ÇÂ¼×î¶ÌÂ·¾¶
+			PQueue S = new PQueue();//ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Â·ï¿½ï¿½
 	        S.Path = new Vector<String>();
-			if (!Str.equals(Start))//Èç¹û²»ÊÇÆðÊ¼µã
+			if (!Str.equals(Start))//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½
 			{
-				Node.Costs = 1000000;//³õÊ¼DÊý×é
+				Node.Costs = 1000000;//ï¿½ï¿½Ê¼Dï¿½ï¿½ï¿½ï¿½
 				Node.End = Str;
 
 		        D.add(Node);
 
 		        S.Path.addElement(Start);
 		        S.End = Str;
-		        NodeShortPath.addElement(S);//³ö·¢µãµ½ËùÓÐµãµÄ×î¶ÌÂ·¾¶
+		        NodeShortPath.addElement(S);//ï¿½ï¿½ï¿½ï¿½ï¿½ãµ½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
 			}
 	    }
 	}
@@ -326,14 +338,14 @@ public class Digraph
 				{
 					PQueue SNode = new PQueue();
 					for (PQueue SP: D)
-				        if (SP.End.equals(Node.Words))//ÕÒµ½Í¼µÄÁÚ½ÓµãÔÚDÖÐ¶ÔÓ¦µÄ¶ÔÏó
+				        if (SP.End.equals(Node.Words))//ï¿½Òµï¿½Í¼ï¿½ï¿½ï¿½Ú½Óµï¿½ï¿½ï¿½Dï¿½Ð¶ï¿½Ó¦ï¿½Ä¶ï¿½ï¿½ï¿½
 	    			    {
 		    				SNode = SP;
 		    				SNode.Costs = Node.Weight;
 		    				D.remove(SP);
 		    				D.add(SNode);
 
-		    				for (int k = 0; k < NodeShortPath.size(); k++)//¸üÐÂÂ·¾¶
+		    				for (int k = 0; k < NodeShortPath.size(); k++)//ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
 		                    {
 		                    	if (NodeShortPath.get(k).End.equals(SNode.End))
 		                        {
@@ -358,24 +370,24 @@ public class Digraph
 		DInit(D, NodeShortPath, Start);
 
         UpdataStart(D, NodeShortPath, Start);
-	    while(D.peek() != null)//³ö¶ÓÁÐ
+	    while(D.peek() != null)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	    {
-	    	PQueue Node = D.poll();//ÓÅÏÈ¶ÓÁÐµÚÒ»¸öµã
+	    	PQueue Node = D.poll();//ï¿½ï¿½ï¿½È¶ï¿½ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½ï¿½
 	    	String TempNodeString = Node.End;
 	    	int Costs = Node.Costs;
 	        int i = 0;
-	    	for (; i < HeadNodeList.size(); i++)//ÕÒµ½¶¥µãÍ¼ÖÐ¶ÔÓ¦¶¥µã
+	    	for (; i < HeadNodeList.size(); i++)//ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½Ð¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½
 	        	if (HeadNodeList.get(i).Words.equals(TempNodeString))
 	        		break;
 	        if (i != HeadNodeList.size())
 	        {
-	    	    DigraphNode node = HeadNodeList.get(i).Next;//Áì½Óµã
+	    	    DigraphNode node = HeadNodeList.get(i).Next;//ï¿½ï¿½Óµï¿½
 	    	    while (node != null)
 		    	{
 		    		 for (PQueue SP: D)
-    	                 if (SP.End.equals(node.Words))//ÕÒµ½Í¼µÄÁÚ½ÓµãÔÚDÖÐ¶ÔÓ¦µÄ¶ÔÏó
+    	                 if (SP.End.equals(node.Words))//ï¿½Òµï¿½Í¼ï¿½ï¿½ï¿½Ú½Óµï¿½ï¿½ï¿½Dï¿½Ð¶ï¿½Ó¦ï¿½Ä¶ï¿½ï¿½ï¿½
     		             {
-                            if (Costs +  node.Weight <= SP.Costs)//ÓÃµ±Ç°ÖÐ¼äµãÀ´ÆäËû¾àÀë
+                            if (Costs +  node.Weight <= SP.Costs)//ï¿½Ãµï¿½Ç°ï¿½Ð¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                             {
                             	int A = 0;
 			    				for (; A < NodeShortPath.size(); A++)
@@ -418,9 +430,9 @@ public class Digraph
 	                        	    {
 	                        	    	if (Costs +  node.Weight < SP.Costs)
 	                        	    	{
-	                        	    	    NodeShortPath.get(B).Costs = Costs + node.Weight;//¸üÐÂD;
+	                        	    	    NodeShortPath.get(B).Costs = Costs + node.Weight;//ï¿½ï¿½ï¿½ï¿½D;
 	                        	    	    PQueue SPNode = SP;
-	    			            	        SPNode.Costs = Costs + node.Weight;//¸üÐÂD;
+	    			            	        SPNode.Costs = Costs + node.Weight;//ï¿½ï¿½ï¿½ï¿½D;
 	    			            	        D.remove(SP);
 	    				    				D.add(SPNode);
 	                        	    	    NodeShortPath.get(B).Path.clear();
@@ -672,7 +684,7 @@ public class Digraph
 
 	public String RandomWalk(String pre)
 	{
-		if(pre=="")//³õÊ¼»¯
+		if(pre=="")//ï¿½ï¿½Ê¼ï¿½ï¿½
 		{
 			KeyNode.clear();
 			for(DigraphNode n : HeadNodeList)
@@ -717,6 +729,36 @@ public class Digraph
 				return node.Words;
 			}
 		}
+	}
+
+	public void StartRandomWalk(BorderPane layout)
+	{
+		System.out.println("start randomwalking:");
+		String word = "";
+		String preword ="";
+		boolean flag = true;
+
+		do {
+			preword = RandomWalk(word);
+			if (!preword.equals(word) || !preword.equals("-end-"))
+			{
+				if (preword.length()>=5 && preword.subSequence(0, 5).equals("-end-"))
+				{
+					String s = preword.substring(5);
+					System.out.print(s + " ");
+				}
+				else
+				{
+					System.out.print(preword + " ");
+				}
+			}
+			else
+			{
+				flag = false;
+				System.out.println("End");
+			}
+			word = preword;
+		} while (flag);
 	}
 }
 

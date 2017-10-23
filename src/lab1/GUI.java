@@ -78,10 +78,10 @@ public class GUI extends Application {
 		 ProgressBar updProg = new ProgressBar();
 		 updProg.progressProperty().bind(task.progressProperty());
 
-		 Text T = new Text("¼ÓÔØ½ø¶È...");
+		 Text T = new Text("ï¿½ï¿½ï¿½Ø½ï¿½ï¿½ï¿½...");
 		 T.setFill(Color.RED);
 		 T.setFont(Font.font(15));
-		 Button t = new Button("½øÈë");
+		 Button t = new Button("ï¿½ï¿½ï¿½ï¿½");
 		 t.setStyle("-fx-font: 15 arial; -fx-base: #ee2211;");
 		 t.setOnAction(e->{
 				 EnterSystem(window);
@@ -91,14 +91,14 @@ public class GUI extends Application {
 		 th.setDaemon(true);
 		 th.start();
 
-        // ´´½¨ImageºÍImageView¶ÔÏó
+        // ï¿½ï¿½ï¿½ï¿½Imageï¿½ï¿½ImageViewï¿½ï¿½ï¿½ï¿½
         Image image = new Image("1.png", 150, 150, false, false);
         ImageView imageView = new ImageView();
         imageView.setImage(image);
 
 
 		// File Menu
-		Menu SystemMenu = new Menu("_ÏµÍ³µÇÂ¼½çÃæ");
+		Menu SystemMenu = new Menu("_ÏµÍ³ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½");
 		MenuBar menuBar = new MenuBar();
 		menuBar.getMenus().addAll(SystemMenu);
 
@@ -120,7 +120,7 @@ public class GUI extends Application {
 		layout.setCenter(gridpaneLeft);
 
 		Scene scene = new Scene(layout, 330, 330);
-		window.setTitle("ÏµÍ³²Ù×÷½çÃæ");
+		window.setTitle("ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		window.setScene(scene);
 		window.setResizable(false);
 		window.show();
@@ -133,7 +133,7 @@ public class GUI extends Application {
 	    gridpaneLeft = new GridPane();
 	    gridpaneRight = new GridPane();
 
-	    /*Text text2 = new Text("´¦ÀíÎÄ¼þÄÚÈÝÎª£º");
+	    /*Text text2 = new Text("ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
 		VText.addElement(text2);
 		text2.setFill(Color.RED);
         text2.setFont(Font.font(15));
@@ -141,7 +141,7 @@ public class GUI extends Application {
 	    ListView<Text> list2 = new ListView<>();
 		list2.getItems().add(text2);
 
-        Text text1 = new Text("Ô­ÎÄ¼þÄÚÈÝÎª£º");
+        Text text1 = new Text("Ô­ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
         text1.setFill(Color.RED);
         text1.setFont(Font.font(15));
 	    VText.addElement(text1);
@@ -150,9 +150,9 @@ public class GUI extends Application {
 		list.getItems().add(text1);*/
 
 		// File Menu
-		Menu FileMenu = new Menu("_ÎÄ¼þ");
+		Menu FileMenu = new Menu("_ï¿½Ä¼ï¿½");
 
-		MenuItem NewItem = new MenuItem("_¶ÁÎÄ¼þ½¨Í¼");
+		MenuItem NewItem = new MenuItem("_ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Í¼");
 		NewItem.setOnAction(e->{
 			 ReadFile(VText);//, list, list2);
 			 F = 1;
@@ -160,14 +160,14 @@ public class GUI extends Application {
 		);
 
 		MenuItem Separator = new SeparatorMenuItem();
-		MenuItem Exit = new MenuItem("_ÍË³öÏµÍ³");
+		MenuItem Exit = new MenuItem("_ï¿½Ë³ï¿½ÏµÍ³");
 		Exit.setOnAction(e -> window.close());
 		FileMenu.getItems().addAll(NewItem, Separator, Exit);
 
 		// BridgeWords Menu
-		Menu BridgeWordsMenu = new Menu("_ÇÅ½Ó´Ê");
+		Menu BridgeWordsMenu = new Menu("_ï¿½Å½Ó´ï¿½");
 
-		MenuItem GetBWords = new MenuItem("_²éÑ¯ÇÅ½Ó´Ê");
+		MenuItem GetBWords = new MenuItem("_ï¿½ï¿½Ñ¯ï¿½Å½Ó´ï¿½");
 		GetBWords.setOnAction(e ->
 		{
 			if (F == 1)
@@ -176,7 +176,7 @@ public class GUI extends Application {
 				PromptBuiltFigure();
 		});
 
-		MenuItem GetNewFile = new MenuItem("_Éú³ÉÐÂÎÄ±¾");
+		MenuItem GetNewFile = new MenuItem("_ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½");
 		GetNewFile.setOnAction(e ->
 		{
 			if (F == 1)
@@ -188,9 +188,9 @@ public class GUI extends Application {
 		BridgeWordsMenu.getItems().addAll(GetBWords, Separator, GetNewFile);
 
 		// ShortestPath Menu
-		Menu ShortestPathMenu = new Menu("_×î¶ÌÂ·¾¶");
+		Menu ShortestPathMenu = new Menu("_ï¿½ï¿½ï¿½Â·ï¿½ï¿½");
 
-		MenuItem TwoWordsShortestPath = new MenuItem("_²éÑ¯Á½µ¥´Ê×î¶ÌÂ·¾¶");
+		MenuItem TwoWordsShortestPath = new MenuItem("_ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½");
 		TwoWordsShortestPath.setOnAction(e->{
 			if (F == 1)
 				GetTwoWordsShortestPath(layout);
@@ -198,7 +198,7 @@ public class GUI extends Application {
 				PromptBuiltFigure();
 		});
 
-		MenuItem OneWordShortestPath = new MenuItem("_²éÑ¯Ò»¸öµ¥´ÊµÄËùÓÐ×î¶ÌÂ·¾¶");
+		MenuItem OneWordShortestPath = new MenuItem("_ï¿½ï¿½Ñ¯Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½");
 		OneWordShortestPath.setOnAction(e->{
 			if (F == 1)
 				GetOneWordsShortestPath(layout);
@@ -209,12 +209,12 @@ public class GUI extends Application {
 		ShortestPathMenu.getItems().addAll(TwoWordsShortestPath, Separator, OneWordShortestPath);
 
 		//Help Menu
-		Menu HelpMenu = new Menu("_°ïÖú");
+		Menu HelpMenu = new Menu("_ï¿½ï¿½ï¿½ï¿½");
 
-		MenuItem HelpTxt = new MenuItem("_²éÑ¯°ïÖúÎÄµµ");
+		MenuItem HelpTxt = new MenuItem("_ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½");
 		HelpTxt.setOnAction(e->{
 			Stage secondWindow = new Stage();
-			secondWindow.setTitle("                   Ê¹ÓÃËµÃ÷");
+			secondWindow.setTitle("                   Ê¹ï¿½ï¿½Ëµï¿½ï¿½");
 			Group g = new Group();
 
 		    DropShadow ds = new DropShadow();
@@ -231,21 +231,21 @@ public class GUI extends Application {
 		    t.setText("------------------------------------------\n"
 		    		 +"**     **        **          **        **       **\n"
 		    		 +"------------------------------------------\n"
-		             +"                      ÏµÍ³Ê¹ÓÃËµÃ÷                                                      \n"
-		    		 +"     ±¾ÏµÍ³Ò»¹²ÓÐ°Ë¸ö¹¦ÄÜ£¬¶ÔÓ¦¶¥¶ËÄ¿Â¼                                \n\n"
-		             +"     ¹¦ÄÜÒ»£ºÎÄ¼þÄ¿Â¼ÏÂ¶ÁÎÄ¼þ½¨Í¼¹¦ÄÜ\n"
-		    		 +"     ¹¦ÄÜ¶þ£ºÆÁÄ»°´Å¥£¬½¨ºÃÍ¼µÄÕ¹Ê¾\n"
-		             +"     ¹¦ÄÜÈý£ºÇÅ½Ó´ÊÄ¿Â¼ÏÂÕ¹Ê¾Á½¸öµ¥´Ê\n"
-		    		 +"                   µÄÇÅ½Ó´Ê                             \n"
-		             +"     ¹¦ÄÜËÄ£ºÇÅ½Ó´ÊÄ¿Â¼ÏÂ¸ù¾ÝÊäÈëÎÄ±¾\n"
-		    		 +"                   Éú³ÉÐÂµÄÎÄ±¾                    \n"
-		             +"     ¹¦ÄÜÎå£º×î¶ÌÂ·¾¶Ä¿Â¼ÏÂ¼ÆËãÊäÈëÁ½¸ö\n"
-		    		 +"                   µ¥´ÊµÄ×î¶ÌÂ·¾¶                    \n"
-		             +"     ¹¦ÄÜÁù£º×î¶ÌÂ·¾¶Ä¿Â¼ÏÂ¼ÆËãÒ»¸öÊäÈë\n"
-		    		 +"                   µ¥´Êµ½ËùÓÐµ¥´ÊµÄ×î¶ÌÂ·¾¶\n"
-		             +"     ¹¦ÄÜÆß£ºËæ»úÓÎ×ßÄ¿Â¼ÏÂÒÔÊäÈëµãÎªÆð\n"
-		    		 +"                   Ëæ»úÓÎ×ß£¬½á¹ûÐ´µ½ÎÄ¼þÖÐ\n"
-		             +"     ¹¦ÄÜ°Ë£º°ïÖúÄ¿Â¼ÏÂ¸Ä±ä×ÖÌåÑÕÉ«      \n\n"
+		             +"                      ÏµÍ³Ê¹ï¿½ï¿½Ëµï¿½ï¿½                                                      \n"
+		    		 +"     ï¿½ï¿½ÏµÍ³Ò»ï¿½ï¿½ï¿½Ð°Ë¸ï¿½ï¿½ï¿½ï¿½Ü£ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Ä¿Â¼                                \n\n"
+		             +"     ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ä¼ï¿½Ä¿Â¼ï¿½Â¶ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½\n"
+		    		 +"     ï¿½ï¿½ï¿½Ü¶ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½Å¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½Õ¹Ê¾\n"
+		             +"     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å½Ó´ï¿½Ä¿Â¼ï¿½ï¿½Õ¹Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n"
+		    		 +"                   ï¿½ï¿½ï¿½Å½Ó´ï¿½                             \n"
+		             +"     ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½Å½Ó´ï¿½Ä¿Â¼ï¿½Â¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½\n"
+		    		 +"                   ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½Ä±ï¿½                    \n"
+		             +"     ï¿½ï¿½ï¿½ï¿½ï¿½å£ºï¿½ï¿½ï¿½Â·ï¿½ï¿½Ä¿Â¼ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n"
+		    		 +"                   ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½                    \n"
+		             +"     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½Ä¿Â¼ï¿½Â¼ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n"
+		    		 +"                   ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½\n"
+		             +"     ï¿½ï¿½ï¿½ï¿½ï¿½ß£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½\n"
+		    		 +"                   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß£ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½\n"
+		             +"     ï¿½ï¿½ï¿½Ü°Ë£ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Â¼ï¿½Â¸Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«      \n\n"
 		             +"------------------------------------------\n"
    		             +"**     **        **          **        **       **\n"
    		             +"------------------------------------------\n");
@@ -262,7 +262,7 @@ public class GUI extends Application {
 
 		});
 
-		Menu WordsColor = new Menu("_×ÖÌåÑÕÉ«");
+		Menu WordsColor = new Menu("_ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«");
 		MenuItem Blue = new MenuItem("Blue");
 		Blue.setOnAction(e->{
 			for (int i = 0; i < VText.size(); i++)
@@ -285,7 +285,7 @@ public class GUI extends Application {
 				VText.get(i).setFill(Color.GREEN);
 		});
 
-		Menu WordsSize = new Menu("_×ÖÌå´óÐ¡");
+		Menu WordsSize = new Menu("_ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡");
 
 		MenuItem Size10 = new MenuItem("10");
 		Size10.setOnAction(e->{
@@ -316,9 +316,9 @@ public class GUI extends Application {
 
 
 		// RandomWalk Menu
-		Menu RandomWalkMenu = new Menu("_Ëæ»úÓÎ×ß");
+		Menu RandomWalkMenu = new Menu("_ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 
-		MenuItem RandomWalk = new MenuItem("_½øÐÐËæ»úÓÎ×ß");
+		MenuItem RandomWalk = new MenuItem("_ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		RandomWalk.setOnAction(e->{
 			if (F == 1)
 			{
@@ -374,13 +374,13 @@ public class GUI extends Application {
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
         fileChooser.getExtensionFilters().add(extFilter);
         File file = fileChooser.showOpenDialog(window);
-        Text text0 = new Text("ÎÄ¼þÂ·¾¶Îª£º" + file);
+        Text text0 = new Text("ï¿½Ä¼ï¿½Â·ï¿½ï¿½Îªï¿½ï¿½" + file);
 
 
         text0.setFill(Color.RED);
         text0.setFont(Font.font(10));
 
-        Button button = new Button("´òÓ¡Í¼Æ¬");
+        Button button = new Button("ï¿½ï¿½Ó¡Í¼Æ¬");
         button.setStyle("-fx-font: 20 arial; -fx-base: #ee2211;");
 
         button.setOnAction(new EventHandler<ActionEvent>() {
@@ -393,7 +393,7 @@ public class GUI extends Application {
                 Image image=new Image("file:\\D:\\out.png", 700, 950, false, false);
                 pane.getChildren().add(new ImageView(image));
 
-                a.setTitle("ÓÐÏòÍ¼");
+                a.setTitle("ï¿½ï¿½ï¿½ï¿½Í¼");
                 a.setScene(scene);
                 a.setX(40);
                 a.setY(20);
@@ -404,7 +404,7 @@ public class GUI extends Application {
         gridpaneLeft.add(text0,  0, 0);
 		gridpaneLeft.add(button, 0, 1);
 
-		Text text2 = new Text("´¦ÀíÎÄ¼þÄÚÈÝÎª£º");
+		Text text2 = new Text("ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
 		VText.addElement(text2);
 		text2.setFill(Color.RED);
         text2.setFont(Font.font(15));
@@ -412,7 +412,7 @@ public class GUI extends Application {
 	     ListView<Text> list2 = new ListView<>();
 		 list2.getItems().add(text2);
 
-        Text text1 = new Text("Ô­ÎÄ¼þÄÚÈÝÎª£º");
+        Text text1 = new Text("Ô­ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
         text1.setFill(Color.RED);
         text1.setFont(Font.font(15));
 	    VText.addElement(text1);
@@ -460,7 +460,7 @@ public class GUI extends Application {
 									if (Flag == 1)
 										Count++;
 
-									if (Count == 6)//¸Ä
+									if (Count == 6)//ï¿½ï¿½
 		 							{
 		 								Text T = new Text(S);
 		 				 				T.setFill(Color.RED);
@@ -493,7 +493,7 @@ public class GUI extends Application {
 		String S = "";
 		for (int i =  0; i < D.FileText.size(); i++)
 		{
-			if (Count == 5)//¸Ä
+			if (Count == 5)//ï¿½ï¿½
 			{
 				Text T = new Text(S);
 				T.setFill(Color.RED);
@@ -551,12 +551,12 @@ public class GUI extends Application {
 
 		 ListView<Text> list = new ListView<>();
 		 TextField TFiled1 = new TextField ();
-		 TFiled1.setPromptText("ÇëÊäÈëµÚÒ»¸öµ¥´Ê");
+		 TFiled1.setPromptText("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		 TextField TFiled2 = new TextField ();
-		 TFiled2.setPromptText("ÇëÊäÈëµÚ¶þ¸öµ¥´Ê");
+		 TFiled2.setPromptText("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		 Text T1 = new Text("Word1");
 		 Text T2 = new Text("Word2");
-		 Text T = new Text("ÇëÊäÈëÒª²éÑ¯ÇÅ½Ó´ÊµÄÁ½¸öµ¥´Ê");
+		 Text T = new Text("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ñ¯ï¿½Å½Ó´Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 
 		 T.setFill(Color.RED);
 		 T.setFont(Font.font(15));
@@ -572,7 +572,7 @@ public class GUI extends Application {
 		 VText.addElement(T);
 
 
-		 Button t = new Button("È·¶¨");
+		 Button t = new Button("È·ï¿½ï¿½");
 		 t.setStyle("-fx-font: 15 arial; -fx-base: #ee2211;");
 		 t.setOnAction(e->{
 
@@ -588,7 +588,7 @@ public class GUI extends Application {
 
 				 if (Temp1.length() == 0 || Temp2.length() == 0)
 				 {
-					 Text T3 = new Text("ÊäÈëÐÐÖÐÇë²»ÒªÖ»ÊäÈë¿Õ¸ñ");
+					 Text T3 = new Text("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë²»ÒªÖ»ï¿½ï¿½ï¿½ï¿½Õ¸ï¿½");
 				     T3.setFill(Color.RED);
 				     T3.setFont(Font.font(15));
 				     VText.add(T3);
@@ -599,7 +599,7 @@ public class GUI extends Application {
 
 				 if (Temp1.contains(" ") || Temp2.contains(" "))
 				 {
-					 Text T3 = new Text("Ò»¸öÊäÈëÐÐÇëÖ»ÊäÈëÒ»¸öµ¥´Ê");
+					 Text T3 = new Text("Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 				     T3.setFill(Color.RED);
 				     T3.setFont(Font.font(15));
 				     VText.add(T3);
@@ -614,7 +614,7 @@ public class GUI extends Application {
 					 Text T3;
 					 if (D.BridgeWords.size() > 1)
 					 {
-					 	 T3 = new Text( "The bridge words from ");  //+ "\"" + S1 + "\" to \""  + S2 + "\" are: ");//¸Ä
+					 	 T3 = new Text( "The bridge words from ");  //+ "\"" + S1 + "\" to \""  + S2 + "\" are: ");//ï¿½ï¿½
 						 T3.setFill(Color.RED);
 					     T3.setFont(Font.font(15));
 					     VText.add(T3);
@@ -629,7 +629,7 @@ public class GUI extends Application {
 					}
 					else
 					{
-						 T3 = new Text( "The bridge words from ");  //+ "\"" + S1 + "\" to \""  + S2 + "\" are: ");//¸Ä
+						 T3 = new Text( "The bridge words from ");  //+ "\"" + S1 + "\" to \""  + S2 + "\" are: ");//ï¿½ï¿½
 						 T3.setFill(Color.RED);
 					     T3.setFont(Font.font(15));
 					     VText.add(T3);
@@ -646,7 +646,7 @@ public class GUI extends Application {
 				     String S = "";
 				     for (int i = 0; i < D.BridgeWords.size(); i++)
 				     {
-				    	 if (Count++ == 4)//¸Ä
+				    	 if (Count++ == 4)//ï¿½ï¿½
 				    	 {
 				    		 Text TEXT = new Text(S);
 						     TEXT.setFill(Color.RED);
@@ -678,7 +678,7 @@ public class GUI extends Application {
 					     pane.getChildren().add(new ImageView(image));
 
 
-					     a.setTitle("ÇÅ½Ó´ÊÓÐÏòÍ¼");
+					     a.setTitle("ï¿½Å½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½Í¼");
 					     a.setScene(scene);
 					     a.setX(40);
 			             a.setY(20);
@@ -690,7 +690,7 @@ public class GUI extends Application {
 					 String Find;
 
 				     Find = (STr.contains("from")) ? "from": "in";
-					 String S = "";//¸Ä
+					 String S = "";//ï¿½ï¿½
 					 int Index = STr.indexOf(Find);
 
 					 int Limit = (STr.contains("from"))? Index + 4 : (Index + 2);
@@ -718,7 +718,7 @@ public class GUI extends Application {
 			 {
 				 gridpaneRight.getChildren().remove(list);
 				 list.getItems().clear();
-				 Text T3 = new Text("ÇëÊäÈëÁ½¸öµ¥´Ê");
+				 Text T3 = new Text("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 				 T3.setFill(Color.RED);
 				 T3.setFont(Font.font(15));
 				 VText.add(T3);
@@ -746,15 +746,15 @@ public class GUI extends Application {
 
 		 ListView<Text> list = new ListView<>();
 		 TextArea TArea = new TextArea ();
-		 TArea.setPromptText("ÇëÊäÈë²éÑ¯ÎÄ±¾");
+		 TArea.setPromptText("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½Ä±ï¿½");
 		 TArea.setPrefColumnCount(15);
-		 Text T = new Text("ÇëÊäÈë²éÑ¯ÎÄ±¾");
+		 Text T = new Text("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½Ä±ï¿½");
 		 T.setFill(Color.RED);
 		 T.setFont(Font.font(15));
 
 		 VText.addElement(T);
 
-		 Button t = new Button("È·¶¨");
+		 Button t = new Button("È·ï¿½ï¿½");
 		 t.setStyle("-fx-font: 15 arial; -fx-base: #ee2211;");
 		 t.setOnAction(e->{
 
@@ -763,7 +763,7 @@ public class GUI extends Application {
 			 {
 				 gridpaneRight.getChildren().remove(list);
 				 list.getItems().clear();
-				 Text T3 = new Text("ÊäÈëÎÄµµ²»ÄÜÎª¿Õ");
+				 Text T3 = new Text("ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
 				 T3.setFill(Color.RED);
 				 T3.setFont(Font.font(15));
 				 VText.add(T3);
@@ -776,7 +776,7 @@ public class GUI extends Application {
 			 {
 				 gridpaneRight.getChildren().remove(list);
 				 list.getItems().clear();
-				 Text T3 = new Text("ÊäÈëÖ»ÊäÈë±êµã¡¢¿Õ¸ñµÈ·Ç×ÖÄ¸µ¥´Ê");
+				 Text T3 = new Text("ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ã¡¢ï¿½Õ¸ï¿½È·ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½");
 				 T3.setFill(Color.RED);
 				 T3.setFont(Font.font(15));
 				 VText.add(T3);
@@ -788,7 +788,7 @@ public class GUI extends Application {
 			 gridpaneRight.getChildren().remove(list);
 			 list.getItems().clear();
 
-			 Text T3 = new Text("×ª»»½á¹ûÎª£º");
+			 Text T3 = new Text("×ªï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
 			 T3.setFill(Color.RED);
 			 T3.setFont(Font.font(15));
 			 VText.add(T3);
@@ -838,13 +838,13 @@ public class GUI extends Application {
 
 		 ListView<Text> list = new ListView<>();
 		 TextField TFiled1 = new TextField ();
-		 TFiled1.setPromptText("ÇëÊäÈëµÚÒ»¸öµ¥´Ê");
+		 TFiled1.setPromptText("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		 TextField TFiled2 = new TextField ();
-		 TFiled2.setPromptText("ÇëÊäÈëµÚ¶þ¸öµ¥´Ê");
+		 TFiled2.setPromptText("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		 Text T1 = new Text("Word1");
 		 Text T2 = new Text("Word2");
 
-		 Text T = new Text("ÇëÊäÈëÒª²éÑ¯×î¶ÌÂ·¾¶µÄÁ½¸öµ¥´Ê");
+		 Text T = new Text("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		 T.setFill(Color.RED);
 		 T.setFont(Font.font(15));
 
@@ -858,7 +858,7 @@ public class GUI extends Application {
 		 VText.addElement(T2);
 		 VText.addElement(T);
 
-		 Button t = new Button("È·¶¨");
+		 Button t = new Button("È·ï¿½ï¿½");
 		 t.setStyle("-fx-font: 15 arial; -fx-base: #ee2211;");
 		 t.setOnAction(e->{
 
@@ -869,7 +869,7 @@ public class GUI extends Application {
 			 {
 				 gridpaneRight.getChildren().remove(list);
 				 list.getItems().clear();
-				 Text T3 = new Text("ÇëÊäÈëÁ½¸ö³¤¶È´óÓÚÒ»µÄµ¥´Ê");
+				 Text T3 = new Text("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½ï¿½ï¿½Ò»ï¿½Äµï¿½ï¿½ï¿½");
 				 T3.setFill(Color.RED);
 				 T3.setFont(Font.font(15));
 				 VText.add(T3);
@@ -886,7 +886,7 @@ public class GUI extends Application {
 			 {
 				 gridpaneRight.getChildren().remove(list);
 				 list.getItems().clear();
-				 Text T3 = new Text("ÊäÈëÐÐÖÐÇë²»ÒªÖ»ÊäÈë¿Õ¸ñ");
+				 Text T3 = new Text("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë²»ÒªÖ»ï¿½ï¿½ï¿½ï¿½Õ¸ï¿½");
 			     T3.setFill(Color.RED);
 			     T3.setFont(Font.font(15));
 			     VText.add(T3);
@@ -899,7 +899,7 @@ public class GUI extends Application {
 			 {
 				 gridpaneRight.getChildren().remove(list);
 				 list.getItems().clear();
-				 Text T3 = new Text("Ò»¸öÊäÈëÐÐÇëÖ»ÊäÈëÒ»¸öµ¥´Ê");
+				 Text T3 = new Text("Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 			     T3.setFill(Color.RED);
 			     T3.setFont(Font.font(15));
 			     VText.add(T3);
@@ -914,11 +914,11 @@ public class GUI extends Application {
 				 list.getItems().clear();
 				 Text T3;
 				 if (!D.NodeList.contains(Temp1) && !D.NodeList.contains(Temp2))
-					 T3 = new Text("\"" + Temp1 + "\" ºÍ  \"" + Temp2 + "\" ¶¼²»ÔÚTextÖÐ");
+					 T3 = new Text("\"" + Temp1 + "\" ï¿½ï¿½  \"" + Temp2 + "\" ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Textï¿½ï¿½");
 				 else if(!D.NodeList.contains(Temp1))
-					 T3 = new Text("\"" + Temp1 + "\" ²»ÔÚTextÖÐ");
+					 T3 = new Text("\"" + Temp1 + "\" ï¿½ï¿½ï¿½ï¿½Textï¿½ï¿½");
 				 else
-					 T3 = new Text("\"" + Temp2 + "\"  ²»ÔÚTextÖÐ");
+					 T3 = new Text("\"" + Temp2 + "\"  ï¿½ï¿½ï¿½ï¿½Textï¿½ï¿½");
 				 T3.setFill(Color.RED);
 				 T3.setFont(Font.font(15));
 				 VText.add(T3);
@@ -932,7 +932,7 @@ public class GUI extends Application {
 			 {
 				 gridpaneRight.getChildren().remove(list);
 				 list.getItems().clear();
-				 Text T3 = new Text("Á½¸öµ¥´Ê²»ÄÜÏàÍ¬");
+				 Text T3 = new Text("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê²ï¿½ï¿½ï¿½ï¿½ï¿½Í¬");
 				 T3.setFill(Color.RED);
 				 T3.setFont(Font.font(15));
 				 VText.add(T3);
@@ -949,11 +949,11 @@ public class GUI extends Application {
 				 Vector <PQueue> V = D.NodeShortPath;
 
 
-				 T3 = new Text("\"" + Temp1 + "\" µ½   \"" +  Temp2 + "\"  µÄ×î¶ÌÂ·¾¶ÈçÏÂ£º");
+				 T3 = new Text("\"" + Temp1 + "\" ï¿½ï¿½   \"" +  Temp2 + "\"  ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½Â£ï¿½");
 				 T3.setFill(Color.RED);
 				 T3.setFont(Font.font(15));
 
-				 Text T4 = new Text("\"" + Temp1 + "\" µ½   \"" +  Temp2 + "\" ²»´æÔÚÂ·¾¶");
+				 Text T4 = new Text("\"" + Temp1 + "\" ï¿½ï¿½   \"" +  Temp2 + "\" ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½");
 				 T4.setFill(Color.RED);
 				 T4.setFont(Font.font(15));
 
@@ -973,7 +973,7 @@ public class GUI extends Application {
        				 	 list.getItems().add(T3);
 
        				 	 String Text = "";
-				         Text = "Â·¾¶È¨ÖµÎª£º" + V.get(i).Costs;//¸Ä
+				         Text = "Â·ï¿½ï¿½È¨ÖµÎªï¿½ï¿½" + V.get(i).Costs;//ï¿½ï¿½
 				         Text Tt = new Text(Text);
 						 Tt.setFill(Color.RED);
 						 Tt.setFont(Font.font(15));
@@ -985,7 +985,7 @@ public class GUI extends Application {
 		                	 String words[] = V.get(i).P.get(k).split(" ");
 		                	 for (int X = 0; X < words.length; X++)
 		                	 {
-		                		 if (X % 3 == 0 && X > 0)//¸Ä
+		                		 if (X % 3 == 0 && X > 0)//ï¿½ï¿½
 								 {
 		                			 Text += words[X];
 									 Text TTT = new Text(Text);
@@ -1010,7 +1010,7 @@ public class GUI extends Application {
 								 list.getItems().add(TTT);
 								 Text = "";
 							 }
-		                	 Text = "";//¸Ä
+		                	 Text = "";//ï¿½ï¿½
 						 }
 
 		 				D.picture_zdlj();
@@ -1019,7 +1019,7 @@ public class GUI extends Application {
 		 				Image image=new Image("file:\\D:\\zdljout.png", 700, 950, false, false);
 		 				pane.getChildren().add(new ImageView(image));
 
-		 				a.setTitle("×î¶ÌÂ·¾¶ÓÐÏòÍ¼");
+		 				a.setTitle("ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼");
 		 				a.setScene(scene);
 		 				a.setX(40);
 		 	            a.setY(20);
@@ -1052,9 +1052,9 @@ public class GUI extends Application {
 
 		 ListView<Text> list = new ListView<>();
 		 TextField TFiled1 = new TextField ();
-		 TFiled1.setPromptText("ÇëÊäÈë²éÑ¯µ¥´Ê");
+		 TFiled1.setPromptText("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½");
 		 Text T1 = new Text("Word");
-		 Text T = new Text("ÇëÊäÈëÒª²éÑ¯×î¶ÌÂ·¾¶µÄµ¥´Ê");
+		 Text T = new Text("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½");
 		 T.setFill(Color.RED);
 		 T.setFont(Font.font(15));
 
@@ -1064,7 +1064,7 @@ public class GUI extends Application {
 		 VText.addElement(T1);
 		 VText.addElement(T);
 
-		 Button t = new Button("È·¶¨");
+		 Button t = new Button("È·ï¿½ï¿½");
 		 t.setStyle("-fx-font: 15 arial; -fx-base: #ee2211;");
 		 t.setOnAction(e->{
 
@@ -1078,7 +1078,7 @@ public class GUI extends Application {
 			 {
 				 gridpaneRight.getChildren().remove(list);
 				 list.getItems().clear();
-				 Text T3 = new Text("ÊäÈëÐÐÖÐÇë²»ÒªÖ»ÊäÈë¿Õ¸ñ");
+				 Text T3 = new Text("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë²»ÒªÖ»ï¿½ï¿½ï¿½ï¿½Õ¸ï¿½");
 			     T3.setFill(Color.RED);
 			     T3.setFont(Font.font(15));
 			     VText.add(T3);
@@ -1091,7 +1091,7 @@ public class GUI extends Application {
 			 {
 				 gridpaneRight.getChildren().remove(list);
 				 list.getItems().clear();
-				 Text T3 = new Text("Ò»¸öÊäÈëÐÐÇëÖ»ÊäÈëÒ»¸öµ¥´Ê");
+				 Text T3 = new Text("Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 			     T3.setFill(Color.RED);
 			     T3.setFont(Font.font(15));
 			     VText.add(T3);
@@ -1104,7 +1104,7 @@ public class GUI extends Application {
 			 {
 				 gridpaneRight.getChildren().remove(list);
 				 list.getItems().clear();
-				 Text T3 = new Text(S1 + "  ²»ÔÚTextÖÐ");
+				 Text T3 = new Text(S1 + "  ï¿½ï¿½ï¿½ï¿½Textï¿½ï¿½");
 				 list.getItems().add(T3);
 				 T3.setFill(Color.RED);
 				 T3.setFont(Font.font(15));
@@ -1116,7 +1116,7 @@ public class GUI extends Application {
 				 gridpaneRight.getChildren().remove(list);
 				 list.getItems().clear();
 				 //System.out.print(S1 + "  ");
-				 Text T3 = new Text("\"" + Temp1 + "\"  µ½ " + " ¸÷¸öµãµÄ¾àÀëÈçÏÂ£º");
+				 Text T3 = new Text("\"" + Temp1 + "\"  ï¿½ï¿½ " + " ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â£ï¿½");
 				 T3.setFill(Color.RED);
 				 T3.setFont(Font.font(15));
 				 VText.add(T3);
@@ -1129,7 +1129,7 @@ public class GUI extends Application {
 				 {
 					 if (V.get(i).P.size() == 0)
 					 {
-						 Text TTT = new Text("\"" + V.get(i).End + "\" : ²»¿Éµ½´ï");
+						 Text TTT = new Text("\"" + V.get(i).End + "\" : ï¿½ï¿½ï¿½Éµï¿½ï¿½ï¿½");
 						 TTT.setFill(Color.RED);
 						 TTT.setFont(Font.font(15));
 						 VText.add(TTT);
@@ -1137,19 +1137,19 @@ public class GUI extends Application {
 					 }
 					 else
 					 {
-						 String Text = ("´ïµ½µã£º \"" +  V.get(i).End + "\"  " + "È¨ÖµÎª£º " + V.get(i).Costs);//¸Ä
+						 String Text = ("ï¿½ïµ½ï¿½ã£º \"" +  V.get(i).End + "\"  " + "È¨ÖµÎªï¿½ï¿½ " + V.get(i).Costs);//ï¿½ï¿½
 				         Text TTT = new Text(Text);
 						 TTT.setFill(Color.RED);
 						 TTT.setFont(Font.font(15));
 						 VText.add(TTT);
 						 list.getItems().add(TTT);
-						 Text = "";//¸Ä
+						 Text = "";//ï¿½ï¿½
 		                 for (int k = 0; k < V.get(i).P.size(); k++)
 						 {
 		                	 String words[] = V.get(i).P.get(k).split(" ");
 		                	 for (int X = 0; X < words.length; X++)
 		                	 {
-		                		 if (X % 3 == 0 && X > 0)//¸Ä
+		                		 if (X % 3 == 0 && X > 0)//ï¿½ï¿½
 								 {
 		                			 Text += words[X];
 									 Text TTt = new Text(Text);
@@ -1174,7 +1174,7 @@ public class GUI extends Application {
 								 list.getItems().add(TTt);
 								 Text = "";
 							 }
-		                	 Text = "";//¸Ä
+		                	 Text = "";//ï¿½ï¿½
 						 }
 
 					 }
@@ -1186,7 +1186,7 @@ public class GUI extends Application {
 		{
 		     gridpaneRight.getChildren().remove(list);
 			 list.getItems().clear();
-			 Text T3 = new Text("²éÑ¯µ¥´Ê²»ÄÜÎª¿Õ");
+			 Text T3 = new Text("ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½Ê²ï¿½ï¿½ï¿½Îªï¿½ï¿½");
 			 T3.setFill(Color.RED);
 			 T3.setFont(Font.font(15));
 			 VText.add(T3);
@@ -1204,7 +1204,7 @@ public class GUI extends Application {
 	 public void PromptBuiltFigure()
 	 {
 		 Stage secondWindow = new Stage();
-		 secondWindow.setTitle("¾¯¸æ");
+		 secondWindow.setTitle("ï¿½ï¿½ï¿½ï¿½");
          GridPane grid = new GridPane();
          grid.setAlignment(Pos.CENTER);
          grid.setHgap(10);
@@ -1215,7 +1215,7 @@ public class GUI extends Application {
 	     ds.setOffsetY(0.3);
 	     ds.setColor(Color.color(0.9, 0.9, 0.9));
 
-         Text scenetitle = new Text("\n     ÌáÐÑ£º");
+         Text scenetitle = new Text("\n     ï¿½ï¿½ï¿½Ñ£ï¿½");
 
          scenetitle.setEffect(ds);
          scenetitle.setCache(true);
@@ -1224,17 +1224,17 @@ public class GUI extends Application {
          scenetitle.setFont(Font.font(20));
          grid.add(scenetitle, 0, 0, 2, 1);
 
-         Text t = new Text("\nÇëÏÈ¶Á¶ÁÎÄ¼þ½¨Á¢Í¼Æ¬");
+         Text t = new Text("\nï¿½ï¿½ï¿½È¶ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Í¼Æ¬");
 
          t.setEffect(ds);
 	     t.setCache(true);
 	     t.setFill(Color.BLUE);
 	     t.setWrappingWidth(200);
-	     t.setText("\n     ÇëÏÈ¶ÁÎÄ¼þ½¨Í¼");
+	     t.setText("\n     ï¿½ï¿½ï¿½È¶ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Í¼");
 	     t.setFont(Font.font(20));
          grid.add(t, 0, 1);
 
-         Button btn = new Button("È·¶¨");
+         Button btn = new Button("È·ï¿½ï¿½");
          btn.setStyle("-fx-font: 20 arial; -fx-base: #ee2211;");
 		 btn.setOnAction(e->{secondWindow.close();
 		 });
@@ -1261,14 +1261,14 @@ public class GUI extends Application {
 		 list.getItems().clear();
 
 
-		 Text T1 = new Text("Ëæ»úÓÎ×ß½á¹ûÈçÏÂ£º");
+		 Text T1 = new Text("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½ï¿½ï¿½ï¿½Â£ï¿½");
 
 		 T1.setFill(Color.RED);
 		 T1.setFont(Font.font(15));
 
 		 VText.addElement(T1);
 
-		 Button t = new Button("  ¼ÌÐø   ");
+		 Button t = new Button("  ï¿½ï¿½ï¿½ï¿½   ");
 		 t.setStyle("-fx-font: 15 arial; -fx-base: #ee2211;");
 		 t.setOnAction(e->{
 
@@ -1300,14 +1300,14 @@ public class GUI extends Application {
              Image image=new Image("file:\\D:\\sjyzout.png", 700, 950, false, false);
              pane.getChildren().add(new ImageView(image));
 
-             a.setTitle("Ëæ»úÓÎ×ßÓÐÏòÍ¼");
+             a.setTitle("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼");
              a.setScene(scene);
              a.setX(40);
              a.setY(20);
              a.show();
 		 });
 
-		 Button T = new Button("ÄÚÈÝÐ´ÈëÎÄ¼þ");
+		 Button T = new Button("ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½Ä¼ï¿½");
 		 T.setStyle("-fx-font: 15 arial; -fx-base: #ee2211;");
 		 T.setOnAction(e->{
 			WriteToFile(Str);
@@ -1388,7 +1388,7 @@ public class GUI extends Application {
 	 public void WalkEnd()
 	 {
 		 Stage secondWindow = new Stage();
-		 secondWindow.setTitle("ÌáÊ¾");
+		 secondWindow.setTitle("ï¿½ï¿½Ê¾");
          GridPane grid = new GridPane();
          grid.setAlignment(Pos.CENTER);
          grid.setHgap(10);
@@ -1399,7 +1399,7 @@ public class GUI extends Application {
 	     ds.setOffsetY(0.3);
 	     ds.setColor(Color.color(0.9, 0.9, 0.9));
 
-         Text scenetitle = new Text("\n     ÌáÊ¾£º");
+         Text scenetitle = new Text("\n     ï¿½ï¿½Ê¾ï¿½ï¿½");
 
          scenetitle.setEffect(ds);
          scenetitle.setCache(true);
@@ -1408,17 +1408,17 @@ public class GUI extends Application {
          scenetitle.setFont(Font.font(20));
          grid.add(scenetitle, 0, 0, 2, 1);
 
-         Text t = new Text("\nËæ»úÓÎ×ß½áÊø");
+         Text t = new Text("\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½ï¿½");
 
          t.setEffect(ds);
 	     t.setCache(true);
 	     t.setFill(Color.BLUE);
 	     t.setWrappingWidth(200);
-	     t.setText("\n     Ëæ»úÓÎ×ß½áÊø");
+	     t.setText("\n     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½ï¿½");
 	     t.setFont(Font.font(20));
          grid.add(t, 0, 1);
 
-         Button btn = new Button("È·¶¨");
+         Button btn = new Button("È·ï¿½ï¿½");
          btn.setStyle("-fx-font: 20 arial; -fx-base: #ee2211;");
 		 btn.setOnAction(e->{secondWindow.close();
 		 });
@@ -1436,6 +1436,6 @@ public class GUI extends Application {
 	 }
 
 
-	 public static void main(String[] args)
-	 { launch(args); }
+	/* public static void main(String[] args)
+	 { launch(args); }*/
 }
